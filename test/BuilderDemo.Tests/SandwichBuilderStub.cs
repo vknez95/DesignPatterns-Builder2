@@ -1,28 +1,16 @@
 using System;
 using BuilderDemo.Models;
+using BuilderDemo.Models.Interfaces;
 
 namespace BuilderDemo.Tests
 {
-    public class SandwichBuilderStub : SandwichBuilder
-    {
-        public override void AddCondiments()
-        {
-            throw new NotImplementedException();
-        }
+    // public class SandwichBuilderStub : ISandwichBuilder
+    // {
+    //     private ISandwichBuilder builder { get; set; } = new SandwichBuilder();
 
-        public override void ApplyMeatAndCheese()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void ApplyVegetables()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void PrepareBread()
-        {
-            throw new NotImplementedException();
-        }
-    }
+    //     public Sandwich Build()
+    //     {
+    //         return builder.Build();
+    //     }
+    // }
 }

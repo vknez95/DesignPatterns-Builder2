@@ -7,15 +7,15 @@ namespace BuilderDemo.Tests
     // https://xunit.github.io/docs/getting-started-dotnet-core.html
     public class SandwichBuilderShould
     {
-        private readonly SandwichBuilderStub stub = new SandwichBuilderStub();
+        // private readonly SandwichBuilderStub stub = new SandwichBuilderStub();
 
-        [Fact]
-        public void CreateNewSandwich()
-        {
-            stub.CreateNewSandwich();
-            Sandwich sandwich = stub.GetSandwich();
+        // [Fact]
+        // public void CreateNewSandwich()
+        // {
+        //     stub.CreateNewSandwich();
+        //     Sandwich sandwich = stub.GetSandwich();
 
-            Assert.NotNull(sandwich);
-        }
+        //     Assert.NotNull(sandwich);
+        // }
     }
 }

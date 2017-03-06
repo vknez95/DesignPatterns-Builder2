@@ -1,31 +1,25 @@
+using System;
 using System.Collections.Generic;
 using BuilderDemo.Models.Enums;
+using BuilderDemo.Models.Interfaces;
 
 namespace BuilderDemo.Models
 {
-    public class ClubSandwichBuilder : SandwichBuilder
+    public class ClubSandwichBuilder : ISandwichBuilder
     {
-        public override void AddCondiments()
+        public Sandwich Build()
         {
-            sandwich.HasMayo = true;
-            sandwich.HasMustard = true;
-        }
-
-        public override void ApplyVegetables()
-        {
-            sandwich.Vegetables = new List<string> { "Tomato", "Onion", "Lettuce" };
-        }
-
-        public override void ApplyMeatAndCheese()
-        {
-            sandwich.CheeseType = CheeseType.Swiss;
-            sandwich.MeatType = MeatType.Turkey;
-        }
-
-        public override void PrepareBread()
-        {
-            sandwich.BreadType = BreadType.White;
-            sandwich.IsToasted = true;
+            return
+                SandwichBuilder
+                .Sandwich()
+                .WithBreadType(BreadType.White)
+                .AndToasted()
+                .WithMeat(MeatType.Turkey)
+                .WithCheese(CheeseType.Swiss)
+                .WithVegetables(new List<string> { "Tomato", "Onion", "Lettuce" })
+                .WithMayo()
+                .WithMustard()
+                .Build();
         }
     }
 }

@@ -2,29 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using BuilderDemo.Models.Enums;
+using BuilderDemo.Models.Interfaces;
 
 namespace BuilderDemo.Models
 {
-    class SuperSandwichBuilder : SandwichBuilder
+    class SuperSandwichBuilder : ISandwichBuilder
     {
-        public override void PrepareBread()
+        public Sandwich Build()
         {
-            throw new NotImplementedException();
-        }
-
-        public override void ApplyMeatAndCheese()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void ApplyVegetables()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void AddCondiments()
-        {
-            throw new NotImplementedException();
+            return
+                SandwichBuilder
+                .Sandwich()
+                .WithBreadType(BreadType.Wheat)
+                .WithMeat(MeatType.Salami)
+                .WithCheese(CheeseType.Provolone)
+                .WithVegetables(new List<string> { "Tomato", "Onion", "Lettuce", "Cucumber" })
+                .WithMayo()
+                .Build();
         }
     }
 }
